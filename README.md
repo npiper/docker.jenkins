@@ -21,12 +21,18 @@ Ubuntu based on Docker image [Jenkins](https://hub.docker.com/_/jenkins/)
 
 ## To run
 
+`docker run -p 8080:8080 -p 50000:50000 -v /Volumes/Untitled/VOLUME/JENKINS:/var/jenkins-home solveapuzzle.dev/jenkins`
+
 ### Volumes & Configuration parameters
 
 ## To configure
 
 ### Configuration
 
+
+### Back up configuration
+
+`docker cp $ID:/var/jenkins_home $BACKUP_PATH`
 
 # References
 
