@@ -2,7 +2,7 @@
 
 ## Base image
 
-Ubuntu based on Docker image (Jenkins)[https://hub.docker.com/_/jenkins/]
+Ubuntu based on Docker image [Jenkins](https://hub.docker.com/_/jenkins/)
 
 ## Tools installed for build jobs
 
