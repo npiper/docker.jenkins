@@ -4,6 +4,8 @@
 
 Ubuntu based on Docker image [Jenkins](https://hub.docker.com/_/jenkins/)
 
+https://engineering.riotgames.com/news/putting-jenkins-docker-container
+
 ## Tools installed for build jobs
 
 * Java
