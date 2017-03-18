@@ -1,6 +1,10 @@
-git-client:
-ssh-agent:
 git:
+git-client:
+workflow-step-api:
+bouncycastle-api:
+credentials:
+ssh-credentials: 
+ssh-agent:
 github-api:
 github:
 scm-api:
