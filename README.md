@@ -38,8 +38,7 @@ https://engineering.riotgames.com/news/putting-jenkins-docker-container
 
 # References
 
-https://github.com/fabric8io/jenkins-docker
-https://hub.docker.com/_/jenkins/
-http://askubuntu.com/questions/493460/how-to-install-add-apt-repository-using-the-terminal
-http://linuxg.net/how-to-install-gradle-2-1-on-ubuntu-14-10-ubuntu-14-04-ubuntu-12-04-and-derivatives/
-
+ * https://github.com/fabric8io/jenkins-docker
+ * https://hub.docker.com/_/jenkins/
+ * https://www.howtoinstall.co/en/debian/jessie/gradle 
+ * http://www.webupd8.org/2014/03/how-to-install-oracle-java-8-in-debian.html
