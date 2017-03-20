@@ -1,4 +1,5 @@
 git:
+structs:
 git-client:
 workflow-step-api:
 bouncycastle-api:
@@ -9,7 +10,16 @@ github-api:
 github:
 scm-api:
 confluence-publisher:
+workflow-job:
+mailer:
+branch-api:
+matrix-project:
 jira:
+claim:
+cloudbees-folder:
+matrix-project:
+junit:
 radiatorviewplugin:
 chucknorris:
+maven-plugin:
 m2release:

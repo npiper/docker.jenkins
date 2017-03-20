@@ -28,4 +28,12 @@ RUN apt-get install -y oracle-java8-installer
 COPY plugins.txt /usr/share/jenkins/plugins.txt
 RUN /usr/local/bin/plugins.sh /usr/share/jenkins/plugins.txt
 
+# Install Docker
+RUN apt-get install -y apt-transport-https ca-certificates curl
+RUN curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add -
+RUN add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable"
+RUN apt-get update
+RUN apt-get install -y docker-ce
+
+
 USER jenkins
