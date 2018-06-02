@@ -1,5 +1,4 @@
-FROM jenkins
-
+FROM jenkins/jenkins:lts
 # Set timezone to Melbourne
 USER root
 RUN echo "Australia/Melbourne" | tee /etc/timezone
@@ -10,7 +9,7 @@ RUN dpkg-reconfigure --frontend noninteractive tzdata
 ## Gradle repository - allow use of 'add-apt-repository'
 RUN apt-get update
 
-RUN apt-get install -y software-properties-common python3-software-properties python-software-properties
+RUN apt-get install -y software-properties-common python3-software-properties software-properties-common 
 
 #RUN add-apt-repository ppa:cwchien/gradle
 RUN apt-get install -y maven git make gradle
@@ -25,9 +24,9 @@ RUN apt-get install -y oracle-java8-installer
 
 
 # Install plugins
-COPY plugins.txt /usr/share/jenkins/plugins.txt
-RUN /usr/local/bin/plugins.sh /usr/share/jenkins/plugins.txt
-
+COPY plugins.txt /usr/share/jenkins/ref/plugins.txt 
+#RUN /usr/local/bin/plugins.sh /usr/share/jenkins/plugins.txt
+RUN /usr/local/bin/install-plugins.sh < /usr/share/jenkins/ref/plugins.txt
 # Install Docker
 RUN apt-get install -y apt-transport-https ca-certificates curl
 RUN curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add -
