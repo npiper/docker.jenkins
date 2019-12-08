@@ -1,7 +1,7 @@
 FROM jenkins/jenkins:lts
 # Set timezone to Melbourne
 USER root
-RUN echo "Australia/Melbourne" | tee /etc/timezone
+RUN echo "Europe/London" | tee /etc/timezone
 RUN dpkg-reconfigure --frontend noninteractive tzdata 
 
 # Install tools
@@ -14,14 +14,14 @@ RUN apt-get install -y software-properties-common python3-software-properties so
 #RUN add-apt-repository ppa:cwchien/gradle
 RUN apt-get install -y maven git make gradle
 
-# Oracle JDK
-RUN echo "deb http://ppa.launchpad.net/webupd8team/java/ubuntu xenial main" | tee /etc/apt/sources.list.d/webupd8team-java.list
-RUN echo "deb-src http://ppa.launchpad.net/webupd8team/java/ubuntu xenial main" | tee -a /etc/apt/sources.list.d/webupd8team-java.list
-RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys EEA14886
-RUN apt-get update
-RUN echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | /usr/bin/debconf-set-selections
-RUN apt-get install -y oracle-java8-installer
+RUN apt update
+#RUN apt install oracle-java8-installer
 
+# Oracle JDK
+#RUN echo "oracle-java8-installer shared/accepted-oracle-license-v1-1 select true" | debconf-set-selections
+#RUN echo "deb http://ppa.launchpad.net/webupd8team/java/ubuntu trusty main" > /etc/apt/sources.list.d/webupd8team-java-trusty.list
+#RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys EEA14886
+#RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --force-yes --no-install-recommends oracle-java8-installer && apt-get clean all
 
 # Install plugins
 COPY plugins.txt /usr/share/jenkins/ref/plugins.txt 

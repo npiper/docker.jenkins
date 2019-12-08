@@ -10,7 +10,7 @@ https://engineering.riotgames.com/news/putting-jenkins-docker-container
 
 * Java
 * make
-* maven 
+* maven
 * gradle
 
 ## Plugins
@@ -23,7 +23,9 @@ https://engineering.riotgames.com/news/putting-jenkins-docker-container
 
 ## To run
 
-`docker run -p 8080:8080 -p 50000:50000 -v /Volumes/Untitled/VOLUME/JENKINS:/var/jenkins-home solveapuzzle.dev/jenkins`
+`docker run -p 8080:8080 -p 50000:50000 -v $(pwd)/JENKINS_HOME:/var/jenkins/home solveapuzzle.dev/jenkins`
+
+
 
 ### Volumes & Configuration parameters
 
@@ -43,6 +45,6 @@ Copy to AWS as a backup
  * https://github.com/jenkinsci/docker/blob/master/README.md
  * https://github.com/fabric8io/jenkins-docker
  * https://hub.docker.com/_/jenkins/
- * https://www.howtoinstall.co/en/debian/jessie/gradle 
+ * https://www.howtoinstall.co/en/debian/jessie/gradle
  * http://www.webupd8.org/2014/03/how-to-install-oracle-java-8-in-debian.html
  * https://thepracticalsysadmin.com/backing-up-jenkins-configurations-to-s3/
